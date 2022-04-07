@@ -1,0 +1,16 @@
+global:
+  scrape_interval:     30s
+  evaluation_interval: 30s
+scrape_configs:
+  - job_name: 'cadvisor-prom-Brk'
+    scrape_interval: 30s
+    static_configs:
+      - targets:  ['10.1.253.5:8080']
+  - job_name: 'node-exporter-prom-Brk'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['10.1.253.5:9101']
+        labels:
+          group: 'node'
+
+
